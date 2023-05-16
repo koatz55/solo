@@ -4,16 +4,16 @@ const jwt = require('jsonwebtoken');
 
 module.exports = {
 
-    findAllApparels: async (req, res) => {
+    findAllApparel: async (req, res) => {
         try{
-            const allApparels = await Apparel.find();
-            res.status(200).json(allApparels)
+            const allApparel = await Apparel.find();
+            res.status(200).json(allApparel)
         }
         catch(err){
             res.status(400).json(err)
         }
     },
-    allApparelsByLoggedInUser: async (req, res) => {
+    allApparelByLoggedInUser: async (req, res) => {
         try{
             const decodedJwt = jwt.decode(req.cookies.userToken, {complete:true})
             const user_id = decodedJwt.payload._id
