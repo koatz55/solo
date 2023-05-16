@@ -35,7 +35,7 @@ const ApparelForm = (props) => {
                 {
                     errors.size ?
                         <p className='text-danger'>{errors.size.message}</p> :
-                         null                        
+                        null                        
                 }
                 <label className='form-label'>Type:</label>
                 <select className="form-select" name="genre" onChange={changeHandler} value={apparel.type}>

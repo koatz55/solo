@@ -26,7 +26,7 @@ const Home = (props) => {
                         <h2>{apparel.rating}</h2>
                         <br />
                         <Link to={`/oneItem${apparel._id}`}>Details</Link>
-                        <Link to={`/editItem/${apparel._id}`}>Edit</Link>
+                        <Link to={`/editApparel/${apparel._id}`}>Edit</Link>
                     </div>
                 ))
             }
