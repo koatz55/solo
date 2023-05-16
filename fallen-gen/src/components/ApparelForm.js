@@ -23,6 +23,13 @@ const ApparelForm = (props) => {
                         <p className='text-danger'>{errors.apparelName.message}</p> :
                         null
                 }
+                <label className='form-label'>Price:</label>
+                <input className='form-control' type="text" onChange={changeHandler} value={apparel.price} name='apparelName' />
+                {
+                    errors.apparelName ?
+                        <p className='text-danger'>{errors.price.message}</p> :
+                        null
+                }
                 <label className='form-label'>Apparel image address:</label>
                 <input className='form-control' type="text" onChange={changeHandler} value={apparel.img} name='img' />
                 {

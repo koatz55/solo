@@ -24,6 +24,7 @@ const Home = (props) => {
                         <h2>{apparel.size}</h2>
                         <h2>{apparel.type}</h2>
                         <h2>{apparel.rating}</h2>
+                        <h2>{apparel.price}</h2>
                         <br />
                         <Link to={`/oneItem${apparel._id}`}>Details</Link>
                         <Link to={`/editApparel/${apparel._id}`}>Edit</Link>
