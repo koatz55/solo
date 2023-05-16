@@ -15,9 +15,9 @@ const Nav = (props) => {
     }
     return (
         <div className='d-flex justify-content-evenly align-items-center border'>
-            <h1>Records Dot Com</h1>
+            <h1>fallen generation</h1>
             <div className='w-50 d-flex justify-content-evenly align-items-center'>
-                <Link to={'/createAlbum/form'}>Post an album</Link>
+                <Link to={'/createFit/form'}>Post a Listing</Link>
                 <br />
                 <Link to={'/'}>Home</Link>
                 <Link to={'/profile'}>Profile</Link>

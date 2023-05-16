@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+input[type="radio"]{
+  display: none ;
+}
+
+.star{
+  cursor: pointer;
+  transform: color 200ms;
+}

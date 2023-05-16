@@ -19,15 +19,11 @@ const Home = (props) => {
             {
                 allApparel.map((apparel) => (
                     <div className='border border-success w-25 m-5' key={apparel._id}>
-                        <h2>{apparel.Size}</h2>
-                        <h2>{apparel.about}</h2>
+                        <image src={apparel.img}/>
+                        <h2>{apparel.apparelName}</h2>
+                        <h2>{apparel.size}</h2>
+                        <h2>{apparel.type}</h2>
                         <h2>{apparel.rating}</h2>
-                        <span>Explicit? </span>
-                        {
-                            apparel.explicit?
-                            <span>Yes</span>:
-                            <span>No</span>
-                        }
                         <br />
                         <Link to={`/oneItem${apparel._id}`}>Details</Link>
                         <Link to={`/editItem/${apparel._id}`}>Edit</Link>
