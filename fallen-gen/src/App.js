@@ -8,9 +8,17 @@ import Home from './components/Home';
 import Nav from './components/Nav';
 import CreateFit from './components/CreateFit';
 import EditApparel from './components/EditApparel';
-
+import Profile from './components/Profile';
+import OneItem from './components/OneItem';
 function App() {
   const [errors, setErrors] = useState({})
+  const [apparel, setApparel] = useState({
+    apparelName: '',
+    size: '',
+    type: '',
+    rating: '',
+  })
+
   return (
     <div className="App">
       <header className="App-header">
@@ -33,9 +41,7 @@ function App() {
             errors={errors} 
             setErrors={setErrors}/>} 
           />
-          {/* 
-
-          <Route path='/profile' element={<Profile/>}/> */}
+          <Route path='/profile' element={<Profile/>}/> 
         </Routes>
       </BrowserRouter>
       </header>
