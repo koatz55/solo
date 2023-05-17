@@ -40,7 +40,7 @@ module.exports = {
             const decodedJwt = jwt.decode(req.cookies.userToken, {complete:true})
             console.log('DECODED JWT ID', decodedJwt.payload._id);
             const apparel = {...req.body, user_id:decodedJwt.payload._id}
-            console.log('FINALIZED ALBUM', apparel);
+            console.log('FINALIZED Apparel', apparel);
             const newApparel = await Apparel.create(apparel);
             res.status(201).json(newApparel);
         }
