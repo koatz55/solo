@@ -20,7 +20,7 @@ const ApparelForm = (props) => {
             setErrors("");
         };
         e.preventDefault();
-        axios.post('http://localhost:8000/api/newApparel', apparelName,size,type,rating,image,price, {withCredentials:true})
+        axios.post('http://localhost:8000/api/newApparel', apparelName, size, type, rating, image, price, {withCredentials:true})
             .then((res) => {
                 console.log(res);
                 navigate('/')
@@ -30,7 +30,7 @@ const ApparelForm = (props) => {
             })
     }
     const changeHandler = (e) => {
-    setApparelName({apparelName, [e.target.name]: e.target.value })
+    setSize(e.target.value)
     }
 
     return (
@@ -38,35 +38,36 @@ const ApparelForm = (props) => {
             <h2>Add a listing</h2>
             <form className='col-4 mx-auto' onSubmit={submitHandler}>
                 <label className='form-label'>Apparel Name:</label>
-                <input className='form-control' type="text" onChange={changeHandler} value={apparel.apparelName} name='apparelName' />
+                <input className='form-control' type="text" onChange={(e) => setApparelName(e.target.value )} value={apparelName} name='apparelName' />
                 {
                     errors.apparelName ?
                         <p className='text-danger'>{errors.apparelName.message}</p> :
                         null
                 }
                 <label className='form-label'>Price:</label>
-                <input className='form-control' type="text" onChange={changeHandler} value={apparel.price} name='price' />
+                <input className='form-control' type="text" onChange={changeHandler} value={price} name='price' />
                 {
                     errors.price ?
                         <p className='text-danger'>{errors.price.message}</p> :
                         null
                 }
                 <label className='form-label'>Apparel image address:</label>
-                <input className='form-control' type="text" onChange={changeHandler} value={apparel.img} name='img' />
+                <input className='form-control' type="text" onChange={changeHandler} value={image} name='img' />
                 {
                     errors.img ?
                         <p className='text-danger'>{errors.img.message}</p> :
-                        null
+
+                        ''
                 }
                 <label className='form-label' >Size:</label>
-                <input className='form-control' type="text" onChange={changeHandler} value={apparel.size} name='size' />
+                <input className='form-control' type="text" onChange={changeHandler} value={size} name='size' />
                 {
                     errors.size ?
                         <p className='text-danger'>{errors.size.message}</p> :
-                        null                        
+                        ''                     
                 }
                 <label className='form-label'>Type:</label>
-                <select className="form-select" name="genre" onChange={changeHandler} value={apparel.type}>
+                <select className="form-select" name="genre" onChange={changeHandler} value={type}>
                     <option value="shirt">shirt</option>
                     <option value="pants">pants</option>
                     <option value="jeans">jeans</option>
