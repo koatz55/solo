@@ -85,7 +85,7 @@ const ApparelForm = (props) => {
                         null
                 }
                 <br />
-                <button className='btn btn-primary'>Post Apparel</button>
+                <input className='btn btn-primary' type='submit' Value='Post Apparel'/>
             </form>
         </div>
     )
