@@ -6,7 +6,15 @@ import { useNavigate, Link } from 'react-router-dom';
 
 
 const ApparelForm = (props) => {
-    const {apparel, setApparel, errors, setErrors} = props
+    const [apparel, setApparel] = useState({
+        apparelName: '',
+        size: '',
+        type: '',
+        rating: '',
+        price: '',
+        img: '',
+    })
+    const {errors, setErrors} = props
     const navigate = useNavigate()
     const submitHandler = (e) => {
         e.preventDefault();

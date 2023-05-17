@@ -8,7 +8,7 @@ import Home from './components/Home';
 import Nav from './components/Nav';
 import CreateFit from './components/CreateFit';
 import EditApparel from './components/EditApparel';
-import Profile from './components/Profile';
+import Order from './components/Order';
 import OneItem from './components/OneItem';
 function App() {
   const [errors, setErrors] = useState({})
@@ -17,6 +17,8 @@ function App() {
     size: '',
     type: '',
     rating: '',
+    price: '',
+    img: '',
   })
 
   return (
@@ -40,7 +42,7 @@ function App() {
             errors={errors} 
             setErrors={setErrors}/>} 
           />
-          <Route path='/profile' element={<Profile/>}/> 
+          <Route path='/profile' element={<Order/>}/> 
         </Routes>
       </BrowserRouter>
     </div>

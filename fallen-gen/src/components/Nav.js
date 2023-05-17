@@ -20,7 +20,7 @@ const Nav = (props) => {
                 <Link to={'/createFit/form'}>Post a Listing</Link>
                 <br />
                 <Link to={'/'}>Home</Link>
-                <Link to={'/profile'}>Profile</Link>
+                <Link to={'/order'}>Order</Link>
                 <Link to={'/login'}>Login</Link>
                 <button onClick={logout}>Logout</button>
             </div>

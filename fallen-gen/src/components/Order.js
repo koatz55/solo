@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 
-const Profile = (props) => {
+const Order = (props) => {
     useEffect(() => {
         axios.get('http://localhost:8000/api/myApperal', {withCredentials:true})
             .then((res) => {
@@ -13,8 +13,8 @@ const Profile = (props) => {
     }, [])
     return (
         <div>
-            <h2>Profile</h2>
+            <h2>Order</h2>
         </div>
 )}
 
-export default Profile;
+export default Order;
