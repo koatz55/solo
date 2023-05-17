@@ -3,22 +3,24 @@ import { FaStar } from 'react-icons'
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 
-
-
 const ApparelForm = (props) => {
-    const [apparel, setApparel] = useState({
-        apparelName: '',
-        size: '',
-        type: '',
-        rating: '',
-        price: '',
-        img: '',
-    })
-    const {errors, setErrors} = props
+    const [apparelName, setApparelName] = useState("");
+    const [size, setSize] = useState("");
+    const [type, setType] = useState("");
+    const [rating, setRating] = useState("");
+    const [price, setPrice] = useState("");
+    const [image, setImage] = useState("");
+
+    const [errors, setErrors] = useState("");
     const navigate = useNavigate()
     const submitHandler = (e) => {
+        if (e.target.value.length < 1) {
+            setErrors("is required!");
+        } else {
+            setErrors("");
+        };
         e.preventDefault();
-        axios.post('http://localhost:8000/api/newApparel', apparel, {withCredentials:true})
+        axios.post('http://localhost:8000/api/newApparel', apparelName,size,type,rating,image,price, {withCredentials:true})
             .then((res) => {
                 console.log(res);
                 navigate('/')
@@ -28,7 +30,7 @@ const ApparelForm = (props) => {
             })
     }
     const changeHandler = (e) => {
-    setApparel({ ...apparel, [e.target.name]: e.target.value })
+    setApparelName({apparelName, [e.target.name]: e.target.value })
     }
 
     return (
@@ -43,9 +45,9 @@ const ApparelForm = (props) => {
                         null
                 }
                 <label className='form-label'>Price:</label>
-                <input className='form-control' type="text" onChange={changeHandler} value={apparel.price} name='apparelName' />
+                <input className='form-control' type="text" onChange={changeHandler} value={apparel.price} name='price' />
                 {
-                    errors.apparelName ?
+                    errors.price ?
                         <p className='text-danger'>{errors.price.message}</p> :
                         null
                 }
