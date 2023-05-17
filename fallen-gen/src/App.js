@@ -21,7 +21,6 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
       <BrowserRouter>
         <Nav />
         <Routes>
@@ -44,7 +43,6 @@ function App() {
           <Route path='/profile' element={<Profile/>}/> 
         </Routes>
       </BrowserRouter>
-      </header>
     </div>
   );
 }

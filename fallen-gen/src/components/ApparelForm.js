@@ -1,15 +1,26 @@
-import { set } from 'mongoose';
 import React, { useState } from 'react';
 import { FaStar } from 'react-icons'
+import axios from 'axios';
+import { useNavigate, Link } from 'react-router-dom';
+
+
 
 const ApparelForm = (props) => {
-    const {submitHandler, apparel, setApparel, errors, setErrors} = props
+    const {apparel, setApparel, errors, setErrors} = props
+    const navigate = useNavigate()
+    const submitHandler = (e) => {
+        e.preventDefault();
+        axios.post('http://localhost:8000/api/newApparel', apparel, {withCredentials:true})
+            .then((res) => {
+                console.log(res);
+                navigate('/')
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
     const changeHandler = (e) => {
-        // if (e.target.name === 'rating') {
-        //     setApparel({ ...apparel, rating: null })
-        // } else {
-            setApparel({ ...apparel, [e.target.name]: e.target.value })
-        // }
+    setApparel({ ...apparel, [e.target.name]: e.target.value })
     }
 
     return (
